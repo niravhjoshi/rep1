@@ -1,6 +1,5 @@
 ##### Script to fetch tag information and Servers associated with the particular tag
 
-
 import argparse
 import SoftLayer
 import sys
@@ -11,8 +10,6 @@ parser.add_argument('-apiKey',action='append', type=str,  help='Input for API Ke
 parser.add_argument('-tag',action='append', type=str,  help='Input for tag name')
 parser.add_argument('-fqdn',action='append', type=str,  help='Input for Device fqdn')
 
-
-
 args = parser.parse_args()
 apiUsername =  args.user[0]
 apiKey = args.apiKey[0]
@@ -20,8 +17,6 @@ tagName =  args.tag[0]
 
 #Only lower case tags are allowed to be set, hence only lower case should be searched 
 tagName = tagName.lower()
-
-
 
 if (args.fqdn):
     fqdn = args.fqdn[0]
@@ -66,8 +61,3 @@ if (tagData):
 				print devicefqdn['fullyQualifiedDomainName']
 else:
     print "\n **** Tag name is not present **** "
-
-
-
-
-
